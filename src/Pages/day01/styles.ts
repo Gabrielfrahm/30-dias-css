@@ -1,3 +1,4 @@
+import { shade } from 'polished';
 import styled, { css } from 'styled-components';
 
 interface ButtonPropsLinkedin{
@@ -98,7 +99,7 @@ export const Ul = styled.ul`
     }
 
     li:nth-child(2) span{
-        background-image: linear-gradient( 45deg,#F2B705, #F27405, #F20505, #D91A4D, #854BBF, #7B37AE );;
+        background-image: linear-gradient( 45deg,#F2B705, #F27405, #F20505, #D91A4D, #854BBF, #7B37AE );
     }
 
     li:nth-child(3) span{
@@ -140,8 +141,6 @@ export const Li = styled.li`
       font-size: 30px !important;
       border-radius: 50%;
 
-
-
     }
 `;
 
@@ -155,6 +154,12 @@ export const ButtonLinkedin = styled.button<ButtonPropsLinkedin>`
   border: none;
   border-radius: 50%;
 
+  ${props =>
+    props.isClicked &&
+    css`
+       background: ${shade(0.1,'#0077b5' )} ;
+       opacity: 0.8;
+    `}
 
 `;
 
@@ -168,9 +173,17 @@ height: 100%;
 background: transparent;
 border: none;
 border-radius: 50%;
+
+  ${props =>
+    props.isClicked &&
+    css`
+       background: linear-gradient( 45deg,#F2B705, #F27405, #F20505, #D91A4D, #854BBF, #7B37AE ) ;
+       opacity: 0.6;
+    `}
+
 `;
 
-export const ButtonTwitter= styled.button<ButtonPropsFacebook>`
+export const ButtonTwitter= styled.button<ButtonPropsTwitter>`
   position: absolute;
   top: 0;
   left: 0;
@@ -180,9 +193,17 @@ export const ButtonTwitter= styled.button<ButtonPropsFacebook>`
   border: none;
   border-radius: 50%;
 
+  ${props =>
+    props.isClicked &&
+    css`
+       background:  ${shade(0.1,'#0088a1' )};
+       opacity: .8;
+    `}
+
+
 `;
 
-export const ButtonFacebook= styled.button<ButtonPropsGoogle>`
+export const ButtonGoogle= styled.button<ButtonPropsGoogle>`
   position: absolute;
   top: 0;
   left: 0;
@@ -192,9 +213,16 @@ export const ButtonFacebook= styled.button<ButtonPropsGoogle>`
   border: none;
   border-radius: 50%;
 
+  ${props =>
+    props.isClicked &&
+    css`
+       background:  ${shade(0.1,'#FD9B8E' )};
+       opacity: .8;
+    `}
+
 `;
 
-export const ButtonGoogle= styled.button<ButtonPropsTwitter>`
+export const ButtonFacebook= styled.button<ButtonPropsFacebook>`
   position: absolute;
   top: 0;
   left: 0;
@@ -204,6 +232,15 @@ export const ButtonGoogle= styled.button<ButtonPropsTwitter>`
   border: none;
   border-radius: 50%;
 
+  ${props =>
+    props.isClicked &&
+    css`
+       background: #53ABFD ;
+       opacity: 0.8;
+  `}
+
 `;
+
+
 
 
