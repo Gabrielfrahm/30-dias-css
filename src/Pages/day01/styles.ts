@@ -31,6 +31,8 @@ export const Container = styled.div<ContainerProps>`
     align-items: center;
     justify-content: center;
 
+
+
     ${props =>
     props.isLink &&
     css`
@@ -56,6 +58,12 @@ export const Container = styled.div<ContainerProps>`
     css`
       background: #0088a1 ;
     `}
+`;
+
+export const Back = styled.div`
+  position: absolute;
+  top:0;
+  left: 0;
 `;
 
 export const Ul = styled.ul`

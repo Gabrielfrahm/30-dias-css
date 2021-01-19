@@ -1,8 +1,8 @@
 import React, { useCallback, useState } from 'react';
 import {Link} from 'react-router-dom';
-import {FiInstagram, FiLinkedin, FiTwitter, FiFacebook } from 'react-icons/fi';
+import {FiInstagram, FiLinkedin, FiTwitter, FiFacebook, FiArrowLeft } from 'react-icons/fi';
 import {IoLogoGoogleplus} from 'react-icons/io';
-import {Container, Ul, Li, ButtonLinkedin, ButtonInstagran, ButtonTwitter, ButtonFacebook, ButtonGoogle} from './styles';
+import {Container, Ul, Li, ButtonLinkedin, ButtonInstagran, ButtonTwitter, ButtonFacebook, ButtonGoogle, Back} from './styles';
 
 const Day01: React.FC = () => {
   const [linkedin, setLinkedin] = useState(false);
@@ -50,6 +50,8 @@ const Day01: React.FC = () => {
   }, [])
 
     return (
+      <>
+
         <Container
         isLink ={linkedin}
         isInstagram={instagran}
@@ -57,6 +59,8 @@ const Day01: React.FC = () => {
         isGoogle ={google}
         isTwitter ={twitter}
         >
+          <Back><Link to="/"><FiArrowLeft size={35} color={`#000`}  /></Link></Back>
+
           <Ul>
             <Li>
               <Link to="#">
@@ -105,6 +109,7 @@ const Day01: React.FC = () => {
             </Li>
           </Ul>
         </Container>
+      </>
     );
 }
 
